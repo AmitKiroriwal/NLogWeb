@@ -1,0 +1,34 @@
+﻿@model EmployeeViewModel;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = Model.PageData.PageTitle;
+    
+}
+<html>
+<head>
+    <title>@Model.PageData.PageTitle</title>
+</head>
+<body>
+
+    @*<div class="card-body">
+        <a href="/Home/index" class="card-link">All Employees</a>
+        <a href="mailto:@Model.Employee.Email" class="card-link">Write an Email</a>
+    </div>*@
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                
+                <img src="~/Images/@Model.Employee.PhotoPath" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Employee.Name</h5>
+                    <p class="card-text">Hello I am @Model.Employee.Name and working in @Model.Employee.Department. department</p>
+                    <p class="card-text"><small class="text-muted">Email Me: @Model.Employee.Email</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

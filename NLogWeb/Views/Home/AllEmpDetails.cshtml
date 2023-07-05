@@ -1,0 +1,28 @@
+﻿@model List<Employee>
+
+@{
+    var title = ViewBag.Title;
+
+}
+
+<h1>@title</h1>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div class="card-header">
+                <h5>@item.Name</h5>
+            </div>
+
+            <img class="card-img-top" src="~/images/@item.PhotoPath" asp-append-version="true" height="100" />
+            <div class=" card-footer text-center">
+                <a asp-action="EmpDetails" asp-controller ="Home" asp-route-id="@item.Id" class="btn btn-primary m-1">View</a>
+                <a href="#" class="btn btn-primary m-1">Edit</a>
+                <a href="#" class="btn btn-primary m-1">Delete</a>
+            </div>
+
+        </div>
+    }
+
+</div>
+
